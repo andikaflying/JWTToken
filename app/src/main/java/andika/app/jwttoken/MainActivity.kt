@@ -1,0 +1,17 @@
+package andika.app.jwttoken
+
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+    lateinit var jwtPayload: JWTPayload
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        jwtPayload = JWTParser.parseToken("eyJraWQiOiJIazNhU01welVla1ZMSjJLZXl1TlBjdU1XdWU1c1RtM0RcL2ViRHlpSE9iOD0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyZTUwMDBjYy0zZTZmLTQ0OGEtOGZkMS03OTNmMWVkYmEyZDQiLCJhdWQiOiI3MmJkOGFtcDk0ZGY5bjl0YzNudTFxbzNiNyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6IjQ0ZWJkZDg5LTg0ZWItMTFlOS04ZGQ2LTMxNzdjODhhYzE1OCIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNTU5NDQ4MTYyLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGhlYXN0LTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGhlYXN0LTFfUlRaN1J4QUR1IiwibmFtZSI6ImhhbnNzYXRyaW9Ab25vZmYuaW5zdXJlIiwiY29nbml0bzp1c2VybmFtZSI6IjJlNTAwMGNjLTNlNmYtNDQ4YS04ZmQxLTc5M2YxZWRiYTJkNCIsImV4cCI6MTU1OTQ1MTc2MiwiaWF0IjoxNTU5NDQ4MTYyLCJlbWFpbCI6ImhhbnNzYXRyaW9Ab25vZmYuaW5zdXJlIn0.f5bALDAoqDpxQFLiGwtJoDniuNG2sxvmEKEzbuc-Jpij582yM_caGvv9-HtGurtt348tkInE80J2LZNnTC4wy9lbu5imoCFd-zA-IxJLF71NWjgHgSVjUEQj7bR5aKP-o049MireYlX4SE-QPrfJplkgjwlK9jDB38oNzOkAPsyPutjXV0tBMcuHnmTTOucMdcrYdourIZsS_iucnH94Xv_J93qsx6rcxxEsqM-TzHE8drtl-XtAmlV7pna91KVru6MaatyhWGaPkYIN02lhM1X0C_Zs1cUKl_KkU0jJ1Tr_WnRGA6JobI4NUsLt10zLwZnwzaQm_sDpIct8us7MFw")
+        txvUserSub.setText(jwtPayload.sub)
+        txvEmail.setText(jwtPayload.email)
+    }
+}
